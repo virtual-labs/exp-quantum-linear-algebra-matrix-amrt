@@ -1,88 +1,159 @@
-
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 #### Introduction
+
 In quantum computing, linear algebra is the mathematical foundation used to describe quantum states and the operations performed on them. The state of a quantum system is represented as a vector in a complex Hilbert space, and quantum operations—namely quantum gates—are represented by unitary matrices.
 
-#### Qubits as Vectors
-A single qubit can be represented as a two-dimensional column vector. The standard computational basis states are denoted using Dirac notation as |0⟩ and |1⟩.
 
-|0⟩ = [1, 0]ᵀ  
-|1⟩ = [0, 1]ᵀ
+
+#### Qubits as Vectors
+
+A single qubit can be represented as a two-dimensional column vector. The standard computational basis states are denoted using Dirac notation.
+
+$$
+|0\rangle = \begin{bmatrix} 1 \\ 0 \end{bmatrix}
+$$
+
+$$
+|1\rangle = \begin{bmatrix} 0 \\ 1 \end{bmatrix}
+$$
 
 Any pure state of a single qubit is a linear combination (superposition) of these basis states:
 
-|ψ⟩ = α|0⟩ + β|1⟩
+$$
+|\psi\rangle = \alpha |0\rangle + \beta |1\rangle
+$$
 
 Vector representation:
 
-|ψ⟩ = [ α , β ]ᵀ
+$$
+|\psi\rangle = \begin{bmatrix} \alpha \\ \beta \end{bmatrix}
+$$
 
-where α and β are complex probability amplitudes such that:
+where $$\alpha$$ and $$\beta$$ are complex probability amplitudes such that:
 
-|α|² + |β|² = 1
+$$
+|\alpha|^2 + |\beta|^2 = 1
+$$
 
 
 
 #### Quantum Gates as Matrices
+
 Quantum logic gates manipulate qubit states. These operations are linear and can be represented using matrices. Because quantum operations must preserve total probability, these matrices must be **unitary**, meaning:
 
-U†U = I
+$$
+U^\dagger U = I
+$$
 
-where U† is the conjugate transpose of U.
+where $$U^\dagger$$ is the conjugate transpose of $$U$$
 
 For example:
 
 Pauli-X gate (Quantum NOT gate)
 
-X = \[[0, 1],  
-     [1, 0]]
+$$
+X = \begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
+$$
 
 Hadamard gate
 
-H = (1/√2) × \[[1, 1],  
-              [1, -1]]
+$$
+H = \frac{1}{\sqrt{2}}
+\begin{bmatrix}
+1 & 1 \\
+1 & -1
+\end{bmatrix}
+$$
 
 
 
 #### Matrix Multiplication
+
 When a quantum gate operates on a qubit, the operation is mathematically represented by matrix-vector multiplication.
 
-For example, applying the X gate to |0⟩:
+For example, applying the X gate to the basis state:
 
-X|0⟩ = \[[0,1],[1,0]] × [1,0]ᵀ
+$$
+X|0\rangle =
+\begin{bmatrix}
+0 & 1 \\
+1 & 0
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+$$
 
 Result:
 
-[0,1]ᵀ = |1⟩
+$$
+\begin{bmatrix}
+0 \\
+1
+\end{bmatrix}
+= |1\rangle
+$$
 
-This shows that the X gate flips the state from |0⟩ to |1⟩.
+This shows that the X gate flips the state from $$|0\rangle$$ to $$|1\rangle . $$
 
 When multiple quantum gates are applied sequentially, the overall operation corresponds to matrix-matrix multiplication.
 
 
 
 #### Tensor Products (Kronecker Product)
+
 To represent multi-qubit systems, we use the **tensor product**, denoted by ⊗.
 
-If two qubits are in states |u⟩ and |v⟩, the combined system is:
 
-|u⟩ ⊗ |v⟩
+If two qubits are in states:
+
+$$
+|u\rangle \otimes |v\rangle
+$$
 
 Example:
 
-|0⟩ ⊗ |0⟩ = |00⟩
+$$
+|0\rangle \otimes |0\rangle = |00\rangle
+$$
 
 Vector representation:
 
-[1,0]ᵀ ⊗ [1,0]ᵀ = [1,0,0,0]ᵀ
+$$
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+\otimes
+\begin{bmatrix}
+1 \\
+0
+\end{bmatrix}
+=
+\begin{bmatrix}
+1 \\
+0 \\
+0 \\
+0
+\end{bmatrix}
+$$
 
-If gate A acts on the first qubit and gate B acts on the second qubit, the combined operation is represented as:
+If gate $$A$$ acts on the first qubit and gate $$B$$ acts on the second qubit, the combined operation is:
 
-A ⊗ B
+$$
+A \otimes B
+$$
 
 Tensor products allow single-qubit operations to be combined into larger multi-qubit systems.
 
 
 
 #### Conclusion
+
 By understanding matrix operations such as matrix multiplication and tensor products, we can predict how quantum states evolve during computation. These linear algebra operations form the mathematical foundation for quantum algorithms and quantum circuit execution.
