@@ -1,3 +1,10 @@
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+</script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -31,7 +38,7 @@ $$
 |\psi\rangle = \begin{bmatrix} \alpha \\ \beta \end{bmatrix}
 $$
 
-where $$\alpha$$ and $$\beta$$ are complex probability amplitudes such that:
+where $\alpha$ and $\beta$ are complex probability amplitudes such that:
 
 $$
 |\alpha|^2 + |\beta|^2 = 1
@@ -47,7 +54,7 @@ $$
 U^\dagger U = I
 $$
 
-where $$U^\dagger$$ is the conjugate transpose of $$U$$
+where $U^\dagger$ is the conjugate transpose of $U$
 
 For example:
 
@@ -100,7 +107,7 @@ $$
 = |1\rangle
 $$
 
-This shows that the X gate flips the state from $$|0\rangle$$ to $$|1\rangle . $$
+This shows that the X gate flips the state from $|0\rangle$ to $|1\rangle$.
 
 When multiple quantum gates are applied sequentially, the overall operation corresponds to matrix-matrix multiplication.
 
@@ -144,7 +151,7 @@ $$
 \end{bmatrix}
 $$
 
-If gate $$A$$ acts on the first qubit and gate $$B$$ acts on the second qubit, the combined operation is:
+If gate $A$ acts on the first qubit and gate $B$ acts on the second qubit, the combined operation is:
 
 $$
 A \otimes B
